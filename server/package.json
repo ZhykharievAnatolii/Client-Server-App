@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "clien server app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Client-Server-App"
+  },
+  "keywords": [
+    "server",
+    "client",
+    "app"
+  ],
+  "author": "zhykharievanatolii",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "fastify": "^4.10.2",
+    "pg": "^8.8.0"
+  }
+}
