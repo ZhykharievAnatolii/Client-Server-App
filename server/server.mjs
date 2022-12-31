@@ -20,7 +20,26 @@ server.post('/good', {
     schema:{
         body:{
             type:'object',
-
+            properties:{
+            price:{
+                type:'number',
+                minimum:0
+            },
+                name:{
+                type:'string',
+                    minLength:4,
+                    maxLength:30
+                },
+                size:{
+                enum:['sm','lg','md']
+                },
+                type:{
+                type:'string',
+                    minLength: 4,
+                    maxLength: 40
+                }
+            },
+            required:['price','size','type','name']
         }
     }
 } , async (request,reply)=>{
