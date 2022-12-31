@@ -1,5 +1,6 @@
 import fastify from "fastify";
 import fastifyCors from "@fastify/cors";
+import fastifyMultipart from "@fastify/multipart";
 import pg from "pg";
 
 const {Client}=pg;
@@ -15,6 +16,10 @@ const client=new Client({
     host:"localhost",
 });
 server.register(fastifyCors);
+server.register(fastifyMultipart,{
+    addToBody:true,
+});
+
 
 server.post('/good', {
     schema:{
