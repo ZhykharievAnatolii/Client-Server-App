@@ -44,6 +44,9 @@ server.post('/good', {
     }
 } , async (request,reply)=>{
     const {name, type, size, price}=request.body
+
+    await client.query('INSERT INTO goods(name, size, type, price) VALUES ($1, $2, $3, $4)'),
+        [name, size, type, price]
 })
 
 
