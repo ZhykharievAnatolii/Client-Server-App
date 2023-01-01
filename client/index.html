@@ -6,8 +6,63 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body,
+        html,
+        ul,
+        li,
+        h2,
+        p{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+        }
+
+        body{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .goods{
+            display: grid;
+            grid-template-columns: 200px 1fr;
+
+        }
+        .content{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    </style>
 </head>
 <body>
+
+<div class="goods">
+
+    <aside class="filters">
+
+    </aside>
+    <ul class="content">
+        <li class="content__item">
+            <h2>
+                Title
+            </h2>
+            <p>43$
+            </p>
+            <h2>
+                Title
+            </h2>
+            <p>43$
+            </p>
+            <h2>
+                Title
+            </h2>
+            <p>43$
+            </p>
+
+        </li>
+    </ul>
+</div>
 
 
 <script src="js/index.js"></script>
