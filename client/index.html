@@ -33,6 +33,17 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
+        .filters form{
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+        }
+        .filters__section{
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+
+        }
     </style>
 </head>
 <body>
@@ -41,28 +52,38 @@
 
     <aside class="filters">
     <form >
-        <div class="filter__section">
+        <div class="filters__section">
     <label>
         <h2>
-            Types
+            Sizes
         </h2>
-        <input type="checkbox" value="sm" name="type">
+        <input type="checkbox" value="sm" name="sizes">
         sm
     </label>
         <label>
-            <h2>
-                Types
-            </h2>
-            <input type="checkbox" value="lg" name="type">
+
+            <input type="checkbox" value="lg" name="sizes">
             lg
         </label>
         <label>
-            <h2>
-                Types
-            </h2>
-            <input type="checkbox" value="sm" name="type" >
+
+            <input type="checkbox" value="sm" name="sizes" >
             sm
         </label>
+        </div>
+        <div class="filters__section">
+            <h2>Prices</h2>
+            <label>
+                Price From
+                <input type="number" name="priceFrom">
+            </label>
+            <label>
+                Price To
+                <input type="number" name="priceTo">
+            </label>
+        </div>
+        <div class="filters__section">
+            <h2>Types</h2>
         </div>
     </form>
     </aside>

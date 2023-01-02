@@ -59,7 +59,11 @@ server.get('/goods', async (request,reply)=>{
     const {rows:goods}= await client.query('SELECT * FROM goods' );
     reply.send(goods);
 })
-
+server.get('/types', async (request, reply)=>{
+    const{rows}= await client.query('SELECT type FROM goods');
+    reply.send(rows.map(({type})=> type
+    ))
+})
 
 server.listen({
     port:3000,
