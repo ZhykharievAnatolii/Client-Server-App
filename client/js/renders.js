@@ -8,9 +8,10 @@ export const renderTypeCheckboxes=(types)=>{
 
         label.innerHTML=` 
     <label>
-        <input type="checkbox" value="lg" name="sizes">
-            lg
+        <input type="checkbox" value="${type}" name="types">
+            ${type}
     </label>`;
+        typesSection.append(label)
     })
 
 }
