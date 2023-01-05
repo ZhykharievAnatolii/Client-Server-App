@@ -23,9 +23,10 @@ export const renderGoods= (goods)=>{
         goodItem.classList.add('content__item')
         goodItem.innerHTML=`
             <h2>
-                Title
+                ${name}
             </h2>
-            <p>43$
+            <p>
+            $${price}
             </p>`
     })
 }
