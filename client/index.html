@@ -27,11 +27,17 @@
         .goods{
             display: grid;
             grid-template-columns: 200px 1fr;
+            align-items: start;
 
         }
         .content{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .filters{
+            position: sticky;
+            top:0;
         }
         .filters form{
             display: flex;

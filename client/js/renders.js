@@ -19,7 +19,7 @@ export const renderTypeCheckboxes=(types)=>{
 
 export const renderGoods= (goods)=>{
     goods.forEach(({id, name, price})=>{
-        const goodItem=document.querySelector('li');
+        const goodItem=document.createElement('li');
         goodItem.classList.add('content__item')
         goodItem.innerHTML=`
             <h2>
@@ -28,5 +28,6 @@ export const renderGoods= (goods)=>{
             <p>
             $${price}
             </p>`
-    })
-}
+    });
+    goodsList.append(goodItem)
+};
