@@ -14,8 +14,11 @@ document.addEventListener('DOMContentLoaded',async ()=>{
       for (let count=0;count<form.elements.length;count++){
          const element= form.elements[count];
       if(element.type==='checkbox'&&element.checked){
-      dataStructure[element.name]=dataStructure[element.name] ? [...dataStructure[element.name]]:element.value
+      dataStructure[element.name]=dataStructure[element.name] ? [...dataStructure[element.name]]:[element.value];
       }
+         if(element.type==='number'&&element.value){
+            dataStructure[element.name]=element.value;
+         }
       }
    });
    // event target- ссылка на тот елемент, на котором сработало событие
