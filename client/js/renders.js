@@ -17,7 +17,10 @@ export const renderTypeCheckboxes=(types)=>{
 
 };
 
-export const renderGoods= (goods)=>{
+export const renderGoods= (goods, isClearBeforeRender=false)=>{
+    if(isClearBeforeRender){
+        goodsList.innerHTML='';
+    }
     goods.forEach(({id, name, price})=>{
         const goodItem=document.createElement('li');
         goodItem.classList.add('content__item')
