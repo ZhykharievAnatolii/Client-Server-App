@@ -67,11 +67,27 @@ server.get('/goods',{
     // Object.entries(query).reduce();
     const result= goods.filter((good)=>{
         if(priceFrom){
-            return good.price> +priceFrom
+            return good.price>+priceFrom
+        }
+        return true;
+    }).filter((good)=>{
+        if(priceTo){
+            return good.price<+priceTo;
         }
         return true;
     })
-    reply.send(goods);
+        .filter((good)=>{
+            if(sizes){
+                return sizes.split(',').includes(good.size)
+            }
+            return true;
+        }) .filter((good)=>{
+            if(types){
+                return types.split(',').includes(good.type)
+            }
+            return true;
+        })
+    reply.send(result);
 })
 server.get('/types', async (request, reply)=>{
     const{rows}= await client.query('SELECT type FROM goods');
