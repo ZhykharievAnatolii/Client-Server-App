@@ -11,4 +11,8 @@ async function request (url,method='GET',body=null){
 
 export const getAllTypeRequest= async ()=>{
     return await request('/types');
+};
+
+export const getGoods= async ()=>{
+    return await request('/goods');
 }
