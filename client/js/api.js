@@ -12,7 +12,9 @@ async function request (url,method='GET',body=null){
 export const getAllTypeRequest= async ()=>{
     return await request('/types');
 };
-
-export const getGoods= async ()=>{
-    return await request('/goods');
+export const getGoods= async (query='')=>{
+    return await request('/goods?${query}');
 }
+// export const getGoods= async (link='')=>{
+//     return await request('/goods');
+// }

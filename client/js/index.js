@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
    const form=document.querySelector('form');
    renderTypeCheckboxes(await getAllTypeRequest());
    renderGoods(await getGoods());
-   form.addEventListener('submit', (event)=>{
+   form.addEventListener('submit', async (event)=>{
       event.preventDefault();
    });
    form.addEventListener('change', (event)=>{
@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded',async ()=>{
          if(element.type==='number'&&element.value){
             dataStructure[element.name]=element.value;
          }
+      const query= new URLSearchParams();
+         Object.entries(dataStructure).forEach(([key,value])=>{
+            query.append(key, Array.isArray(value) ? value.join(','):value)
+         });
+         renderGoods(await getGoods(query.toString()), true)
       }
    });
    // event target- ссылка на тот елемент, на котором сработало событие
