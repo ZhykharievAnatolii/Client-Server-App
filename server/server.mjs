@@ -55,8 +55,22 @@ server.post('/good', {
 
 }
 );
-server.get('/goods', async (request,reply)=>{
+server.get('/goods',{
+    schema:{
+        query:{
+            type:'object'
+        }
+    }
+}, async (request,reply)=>{
+    const {query:{priceFrom, priceTo, types, sizes}}= request();
     const {rows:goods}= await client.query('SELECT * FROM goods' );
+    // Object.entries(query).reduce();
+    const result= goods.filter((good)=>{
+        if(priceFrom){
+            return good.price> +priceFrom
+        }
+        return true;
+    })
     reply.send(goods);
 })
 server.get('/types', async (request, reply)=>{
